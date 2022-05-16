@@ -1,6 +1,6 @@
 #include "utz.h"
 
-const urule_packed_t zone_rules[90] = {
+const urule_packed_t zone_rules[88] = {
 {  8, 255, 7,  1,  1,  2, 0, 1,  4, 0}, // 	AN	2008	max	-	Apr	Sun>=1	2:00s	0	S
 {  8, 255, 7,  1,  1,  2, 0, 2, 10, 1}, // 	AN	2008	max	-	Oct	Sun>=1	2:00s	1:00	D
 {  8, 255, 7,  1,  1,  2, 0, 1,  4, 0}, // 	AS	2008	max	-	Apr	Sun>=1	2:00s	0	S
@@ -11,9 +11,8 @@ const urule_packed_t zone_rules[90] = {
 {  7, 255, 7,  1,  1,  1, 0, 1, 11, 0}, // 	Canada	2007	max	-	Nov	Sun>=1	2:00	0	S
 { 19, 255, 7,  2,  0,  3, 0, 0,  4, 0}, // 	Chile	2019	max	-	Apr	Sun>=2	3:00u	0	-
 { 19, 255, 7,  2,  0,  4, 0, 0,  9, 1}, // 	Chile	2019	max	-	Sep	Sun>=2	4:00u	1:00	-
-{  0, 255, 7,  0,  0,  1, 0, 1,  3, 1}, // 	EU	1981	max	-	Mar	lastSun	1:00u	1:00	S
-{  0, 255, 7,  0,  0,  1, 0, 0, 10, 0}, // 	EU	1996	max	-	Oct	lastSun	1:00u	0	-
-{ 20,  20, 0, 20,  1, 24, 0, 0,  3, 1}, // 	Iran	2020	only	-	Mar	20	24:00	1:00	-
+{  0, 255, 7,  0,  0,  1, 0, 1,  3, 1}, // 	EU	1981	max	-	Mar	lastSun	 1:00u	1:00	S
+{  0, 255, 7,  0,  0,  1, 0, 0, 10, 0}, // 	EU	1996	max	-	Oct	lastSun	 1:00u	0	-
 { 21,  23, 0, 21,  1, 24, 0, 0,  3, 1}, // 	Iran	2021	2023	-	Mar	21	24:00	1:00	-
 { 24,  24, 0, 20,  1, 24, 0, 0,  3, 1}, // 	Iran	2024	only	-	Mar	20	24:00	1:00	-
 { 25,  27, 0, 21,  1, 24, 0, 0,  3, 1}, // 	Iran	2025	2027	-	Mar	21	24:00	1:00	-
@@ -48,7 +47,6 @@ const urule_packed_t zone_rules[90] = {
 { 84,  86, 0, 20,  1, 24, 0, 0,  3, 1}, // 	Iran	2084	2086	-	Mar	20	24:00	1:00	-
 { 87,  87, 0, 21,  1, 24, 0, 0,  3, 1}, // 	Iran	2087	only	-	Mar	21	24:00	1:00	-
 { 88, 255, 0, 20,  1, 24, 0, 0,  3, 1}, // 	Iran	2088	max	-	Mar	20	24:00	1:00	-
-{ 20,  20, 0, 20,  1, 23, 0, 0,  9, 0}, // 	Iran	2020	only	-	Sep	20	24:00	0	-
 { 21,  23, 0, 21,  1, 23, 0, 0,  9, 0}, // 	Iran	2021	2023	-	Sep	21	24:00	0	-
 { 24,  24, 0, 20,  1, 23, 0, 0,  9, 0}, // 	Iran	2024	only	-	Sep	20	24:00	0	-
 { 25,  27, 0, 21,  1, 23, 0, 0,  9, 0}, // 	Iran	2025	2027	-	Sep	21	24:00	0	-
@@ -138,99 +136,99 @@ const char zone_abrevs[214] = {
 };
 
 const uzone_packed_t zone_defns[44] = {
-// 	Africa/Cairo	2:00	Egypt	EE%sT
+// Africa/Cairo	2:00	Egypt	EE%sT
 {  8,   0,   0,   0},
-// 	Africa/Lagos	1:00	-	WAT
+// Africa/Lagos	1:00	-	WAT
 {  4,   0,   0,   5},
-// 	Africa/Maputo	2:00	-	CAT
+// Africa/Maputo	2:00	-	CAT
 {  8,   0,   0,   9},
-// 	Africa/Nairobi	3:00	-	EAT
+// Africa/Nairobi	3:00	-	EAT
 { 12,   0,   0,  13},
-// 	America/Anchorage	-9:00	US	AK%sT
-{-36,  86,   2,  17},
-// 	America/Argentina/Buenos_Aires	-3:00	Arg	-03/-02
-// 	America/Sao_Paulo	-3:00	Brazil	-03/-02
+// America/Anchorage	-9:00	US	AK%sT
+{-36,  84,   2,  17},
+// America/Argentina/Buenos_Aires	-3:00	Arg	-03/-02
+// America/Sao_Paulo	-3:00	Brazil	-03/-02
 {-12,   0,   0,  23},
-// 	America/Chicago	-6:00	US	C%sT
-{-24,  86,   2,  31},
-// 	America/Denver	-7:00	US	M%sT
-{-28,  86,   2,  36},
-// 	America/Halifax	-4:00	Canada	A%sT
+// America/Chicago	-6:00	US	C%sT
+{-24,  84,   2,  31},
+// America/Denver	-7:00	US	M%sT
+{-28,  84,   2,  36},
+// America/Halifax	-4:00	Canada	A%sT
 {-16,   6,   2,  41},
-// 	America/Los_Angeles	-8:00	US	P%sT
-// 	America/Tijuana	-8:00	US	P%sT
-{-32,  86,   2,  46},
-// 	America/Manaus	-4:00	-	-04
+// America/Los_Angeles	-8:00	US	P%sT
+// America/Tijuana	-8:00	US	P%sT
+{-32,  84,   2,  46},
+// America/Manaus	-4:00	-	-04
 {-16,   0,   0,  51},
-// 	America/Mexico_City	-6:00	Mexico	C%sT
-{-24,  82,   2,  31},
-// 	America/New_York	-5:00	US	E%sT
-{-20,  86,   2,  55},
-// 	America/Phoenix	-7:00	-	MST
+// America/Mexico_City	-6:00	Mexico	C%sT
+{-24,  80,   2,  31},
+// America/New_York	-5:00	US	E%sT
+{-20,  84,   2,  55},
+// America/Phoenix	-7:00	-	MST
 {-28,   0,   0,  60},
-// 	America/Regina	-6:00	-	CST
+// America/Regina	-6:00	-	CST
 {-24,   0,   0,  64},
-// 	America/Santiago	-4:00	Chile	-04/-03
+// America/Santiago	-4:00	Chile	-04/-03
 {-16,   8,   2,  68},
-// 	America/St_Johns	-3:30	Canada	N%sT
-{-10,   6,   2,  76},
-// 	Asia/Bangkok	7:00	-	+07
-// 	Asia/Ho_Chi_Minh	7:00	-	+07
+// America/St_Johns	-3:30	Canada	N%sT
+{-14,   6,   2,  76},
+// Asia/Bangkok	7:00	-	+07
+// Asia/Ho_Chi_Minh	7:00	-	+07
 { 28,   0,   0,  81},
-// 	Asia/Dubai	4:00	-	+04
+// Asia/Dubai	4:00	-	+04
 { 16,   0,   0,  85},
-// 	Asia/Hong_Kong	8:00	HK	HK%sT
+// Asia/Hong_Kong	8:00	HK	HK%sT
 { 32,   0,   0,  89},
-// 	Asia/Jerusalem	2:00	Zion	I%sT
-{  8,  88,   2,  94},
-// 	Asia/Karachi	5:00	Pakistan	PK%sT
+// Asia/Jerusalem	2:00	Zion	I%sT
+{  8,  86,   2,  94},
+// Asia/Karachi	5:00	Pakistan	PK%sT
 { 20,   0,   0,  99},
-// 	Asia/Kathmandu	5:45	-	+0545
+// Asia/Kathmandu	5:45	-	+0545
 { 23,   0,   0, 104},
-// 	Asia/Kolkata	5:30	-	IST
+// Asia/Kolkata	5:30	-	IST
 { 22,   0,   0, 110},
-// 	Asia/Riyadh	3:00	-	+03
-// 	Europe/Istanbul	3:00	-	+03
+// Asia/Riyadh	3:00	-	+03
+// Europe/Istanbul	3:00	-	+03
 { 12,   0,   0, 114},
-// 	Asia/Seoul	9:00	ROK	K%sT
+// Asia/Seoul	9:00	ROK	K%sT
 { 36,   0,   0, 118},
-// 	Asia/Shanghai	8:00	PRC	C%sT
-// 	Asia/Taipei	8:00	Taiwan	C%sT
+// Asia/Shanghai	8:00	PRC	C%sT
+// Asia/Taipei	8:00	Taiwan	C%sT
 { 32,   0,   0,  64},
-// 	Asia/Tehran	3:30	Iran	+0330/+0430
-{ 14,  12,  70, 122},
-// 	Asia/Tokyo	9:00	Japan	J%sT
+// Asia/Tehran	3:30	Iran	+0330/+0430
+{ 14,  12,  68, 122},
+// Asia/Tokyo	9:00	Japan	J%sT
 { 36,   0,   0, 134},
-// 	Asia/Yangon	6:30	-	+0630
+// Asia/Yangon	6:30	-	+0630
 { 26,   0,   0, 138},
-// 	Australia/Adelaide	9:30	AS	AC%sT
+// Australia/Adelaide	9:30	AS	AC%sT
 { 38,   2,   2, 144},
-// 	Australia/Brisbane	10:00	AQ	AE%sT
+// Australia/Brisbane	10:00	AQ	AE%sT
 { 40,   0,   0, 150},
-// 	Australia/Darwin	9:30	Aus	AC%sT
+// Australia/Darwin	9:30	Aus	AC%sT
 { 38,   0,   0, 155},
-// 	Australia/Hobart	10:00	AT	AE%sT
+// Australia/Hobart	10:00	AT	AE%sT
 { 40,   4,   2, 160},
-// 	Australia/Perth	8:00	AW	AW%sT
+// Australia/Perth	8:00	AW	AW%sT
 { 32,   0,   0, 166},
-// 	Australia/Sydney	10:00	AN	AE%sT
+// Australia/Sydney	10:00	AN	AE%sT
 { 40,   0,   2, 160},
-// 	Europe/Belgrade	1:00	EU	CE%sT
-// 	Europe/Berlin	1:00	EU	CE%sT
+// Europe/Belgrade	1:00	EU	CE%sT
+// Europe/Berlin	1:00	EU	CE%sT
 {  4,  10,   2, 171},
-// 	Europe/Helsinki	2:00	EU	EE%sT
+// Europe/Helsinki	2:00	EU	EE%sT
 {  8,  10,   2, 177},
-// 	Europe/London	0:00	EU	GMT/BST
+// Europe/London	0:00	EU	GMT/BST
 {  0,  10,   2, 183},
-// 	Europe/Moscow	3:00	-	MSK
+// Europe/Moscow	3:00	-	MSK
 { 12,   0,   0, 191},
-// 	Pacific/Auckland	12:00	NZ	NZ%sT
-{ 48,  84,   2, 195},
-// 	Pacific/Guam	10:00	-	ChST
+// Pacific/Auckland	12:00	NZ	NZ%sT
+{ 48,  82,   2, 195},
+// Pacific/Guam	10:00	-	ChST
 { 40,   0,   0, 201},
-// 	Pacific/Honolulu	-10:00	-	HST
+// Pacific/Honolulu	-10:00	-	HST
 {-40,   0,   0, 206},
-// 	Pacific/Pago_Pago	-11:00	-	SST
+// Pacific/Pago_Pago	-11:00	-	SST
 {-44,   0,   0, 210},
 };
 
